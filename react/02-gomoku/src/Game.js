@@ -71,7 +71,7 @@ export default function Game() {
                 <button onClick={() => setIncreasingOrder(!increasingOrder)}>
                     {increasingOrder ? 'Increasing order' : 'Decreasing order'}
                 </button>
-                <ol>{progress}</ol>
+                <ul>{progress}</ul>
             </div>
         </div>
     );

@@ -14,13 +14,6 @@ export default function calculateWinner(squares, currentMove) {
             counterHorizontal++;
             combinationHorizontal.push(i);
 
-            if (counterHorizontal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationHorizontal
-                };
-            }
         }
     }
 
@@ -35,14 +28,15 @@ export default function calculateWinner(squares, currentMove) {
             counterHorizontal++;
             combinationHorizontal.push(i);
 
-            if (counterHorizontal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationHorizontal
-                };
-            }
         }
+    }
+
+    if (counterHorizontal >= 5) {
+        return {
+            winner: squares[currentMove],
+            draw: false,
+            combination: combinationHorizontal
+        };
     }
 
 
@@ -59,13 +53,6 @@ export default function calculateWinner(squares, currentMove) {
             counterVertical++;
             combinationVertical.push(i);
 
-            if (counterVertical === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationVertical
-                };
-            }
         }
     }
 
@@ -79,14 +66,15 @@ export default function calculateWinner(squares, currentMove) {
             counterVertical++;
             combinationVertical.push(i);
 
-            if (counterVertical === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationVertical
-                };
-            }
         }
+    }
+
+    if (counterVertical >= 5) {
+        return {
+            winner: squares[currentMove],
+            draw: false,
+            combination: combinationVertical
+        };
     }
 
     let counterSideDiagonal = 1;
@@ -104,13 +92,6 @@ export default function calculateWinner(squares, currentMove) {
             counterSideDiagonal++;
             combinationSideDiagonal.push(i);
 
-            if (counterSideDiagonal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationSideDiagonal
-                };
-            }
         }
     }
 
@@ -125,14 +106,15 @@ export default function calculateWinner(squares, currentMove) {
             counterSideDiagonal++;
             combinationSideDiagonal.push(i);
 
-            if (counterSideDiagonal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationSideDiagonal
-                };
-            }
         }
+    }
+
+    if (counterSideDiagonal >= 5) {
+        return {
+            winner: squares[currentMove],
+            draw: false,
+            combination: combinationSideDiagonal
+        };
     }
 
     let counterMainDiagonal = 1;
@@ -149,13 +131,6 @@ export default function calculateWinner(squares, currentMove) {
             counterMainDiagonal++;
             combinationMainDiagonal.push(i);
 
-            if (counterMainDiagonal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationMainDiagonal
-                };
-            }
         }
     }
 
@@ -170,14 +145,15 @@ export default function calculateWinner(squares, currentMove) {
             counterMainDiagonal++;
             combinationMainDiagonal.push(i);
 
-            if (counterMainDiagonal === 5) {
-                return {
-                    winner: squares[currentMove],
-                    draw: false,
-                    combination: combinationMainDiagonal
-                };
-            }
         }
+    }
+
+    if (counterMainDiagonal >= 5) {
+        return {
+            winner: squares[currentMove],
+            draw: false,
+            combination: combinationMainDiagonal
+        };
     }
 
     let draw = true;

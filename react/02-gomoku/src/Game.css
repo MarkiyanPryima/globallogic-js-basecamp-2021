@@ -1,16 +1,7 @@
 body {
     font: 20px sans-serif;
     margin: 20px;
-}
-
-ol, ul {
-    padding-left: 30px;
-}
-
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+    box-sizing: border-box;
 }
 
 .status {
@@ -18,15 +9,13 @@ ol, ul {
 }
 
 .square {
-    background: #fff;
-    border: 1px solid #999;
+    background-color: white;
+    border: 1px solid grey;
     float: left;
     font-size: 30px;
     font-weight: bold;
     line-height: 34px;
     height: 40px;
-    margin-right: -1px;
-    margin-top: -1px;
     padding: 0;
     text-align: center;
     width: 40px;
@@ -45,24 +34,18 @@ ol, ul {
     flex-direction: row;
 }
 
-.game-info {
-    margin-left: 20px;
-}
-
 .selectedItem {
-    color: red;
+    font-weight: bold;
 }
 
 .winner {
     background-color: yellow;
-    border: 1px solid #999;
+    border: 1px solid grey;
     float: left;
     font-size: 30px;
     font-weight: bold;
     line-height: 34px;
     height: 40px;
-    margin-right: -1px;
-    margin-top: -1px;
     padding: 0;
     text-align: center;
     width: 40px;
@@ -70,5 +53,17 @@ ol, ul {
 
 button {
     font-family: inherit;
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.game-board {
+    min-width: 760px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-info {
+    min-width: 230px;
+    text-align: center;
+    margin-left: 20px;
 }
