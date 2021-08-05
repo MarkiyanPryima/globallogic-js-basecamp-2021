@@ -1,12 +1,14 @@
-import SideBar from "./components/sidebar/sidebar";
-import MainBar from "./components/mainbar/mainbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Mainbar from "./components/Mainbar/Mainbar";
+import './index.css'
 import React from "react";
 
 function App() {
-    return (<>
-            <SideBar/>
-            <MainBar/>
-        </>
+    return (
+        <div className={'mainBlock'}>
+            <Sidebar/>
+            <Mainbar/>
+        </div>
     )
 }
 

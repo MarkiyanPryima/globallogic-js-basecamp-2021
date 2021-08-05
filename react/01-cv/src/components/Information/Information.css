@@ -1,0 +1,16 @@
+.information {
+    display: inline-block;
+    margin-top: 5%;
+    width: 70%;
+    text-align: left;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+    .information {
+        font-size: 20px;
+        width: 100%;
+        margin-left: 10%;
+    }
+}

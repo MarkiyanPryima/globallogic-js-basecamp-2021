@@ -1,0 +1,14 @@
+.sidebar {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    background-color: darkolivegreen;
+    overflow-wrap: initial;
+}
+
+@media (max-width: 760px) {
+    .sidebar {
+        width: 100%;
+        margin-left: 0px;
+    }
+}

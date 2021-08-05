@@ -7,3 +7,28 @@
 body {
     background-color: floralwhite;
 }
+
+.mainBlock {
+    position: relative;
+    top: 25px;
+    bottom: 20px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 760px) {
+    .mainBlock {
+        top: 0px;
+        box-shadow: none;
+    }
+
+    .mainbar {
+        position: absolute;
+        top: 102%;
+        left: 0px;
+        margin-left: 6%;
+    }
+
+}

@@ -1,0 +1,18 @@
+.mainbar {
+    display: inline-block;
+    position: absolute;
+    width: 75%;
+    text-align: center;
+}
+
+h1 {
+    color: darkolivegreen;
+}
+
+@media (max-width: 760px) {
+
+    h1 {
+        margin-left: 9%;
+    }
+
+}
