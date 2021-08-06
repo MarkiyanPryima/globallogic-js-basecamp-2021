@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: floralwhite;
+}
+
+div {
+    text-align: center;
+    position: relative;
+    border: 4px solid grey;
+    display: inline-block;
+    height: 100vh;
+    background-color: floralwhite;
+    overflow: auto;
+    border-radius: 15px;
+}
+
+#chat {
+    width: 70%;
+}
+
+#users {
+    width: 29.5%;
+}
+
+h1 {
+    background-color: lightgrey;
+    color: white;
+}
+
+button {
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+    background-color: lightgrey;
+    width: 100%;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.user {
+    font-family: sans-serif;
+    border: 4px solid white;
+    font-size: 20px;
+    margin-top: 2%;
+    width: 95%;
+    height: 20%;
+    border-radius: 4px;
+}
+
+img {
+    display: block;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+}
+
+.name {
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color: grey;
+    left: 0;
+}
+
+.city {
+    position: absolute;
+    color: grey;
+    left: 0;
+    top: 40%;
+}
+
+.phone {
+    position: absolute;
+    color: grey;
+    left: 0;
+    top: 60%;
+}
+
+.message {
+    font-family: sans-serif;
+    border: 4px solid white;
+    font-size: 20px;
+    margin-top: 2%;
+    width: 95%;
+    height: 25%;
+    border-radius: 4px;
+    color: grey;
+}
+
+.text {
+    position: absolute;
+    display: block;
+    top: 60%; line-height: 1.5;
+    left: 2%;
+}
+
+.message>img {
+    display: block;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    border-radius: 50%;
+}
+
+.message>.name {
+    position: absolute;
+    top: 8%;
+    left: 14%;
+}
+
+.age {
+    position: absolute;
+    top: 26%;
+    left: 14%;
+}
