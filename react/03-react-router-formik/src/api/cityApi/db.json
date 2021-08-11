@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Lviv",
+    "status": "city",
+    "age": 765,
+    "timestamp": 1627934490151
+  },
+  {
+    "id": 2,
+    "name": "Kyiv",
+    "status": "capital",
+    "age" : 1538,
+    "timestamp": 1627934784096
+  }
+]

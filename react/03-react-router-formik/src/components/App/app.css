@@ -1,0 +1,43 @@
+.bar {
+    display: flex;
+    height: 120px;
+    width: 100%;
+    margin-top: -9.8%;
+    margin-left: -8px;
+    background-color: #f2f2f2;
+    position: fixed;
+    border-bottom: 2px solid #67b2f1;
+    align-items: center;
+    justify-content: center;
+
+}
+
+a:link {
+    color: #2196f3;
+}
+
+a:visited {
+    color: #2196f3;
+}
+
+a:hover {
+    color: #67b2f1;
+}
+
+a:active {
+    color: #2196f3;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+ul {
+    margin: 0;
+}
+ul li {
+    display: inline;
+    margin-right: 30px;
+
+}

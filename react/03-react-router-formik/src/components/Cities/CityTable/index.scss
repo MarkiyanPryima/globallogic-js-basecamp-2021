@@ -1,0 +1,52 @@
+.CitiesTable {
+  margin-top: 10%;
+
+  a:link {
+    color: #2196f3;
+  }
+
+  a:visited {
+    color: #2196f3;
+  }
+
+  a:hover {
+    color: #67b2f1;
+  }
+
+  a:active {
+    color: #2196f3;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: large;
+  }
+
+  table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #2196f3;
+      color: white;
+    }
+
+    td,
+    th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  }
+}
