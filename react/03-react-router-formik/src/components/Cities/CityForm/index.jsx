@@ -38,7 +38,7 @@ function CityForm({ cities, setCities }) {
           await cityApi.createCity(payload);
           break;
         case MODE.EDIT:
-          await cityApi.createCity(payload);
+          await cityApi.editCity(payload);
           break;
         case MODE.CLONE:
           await cityApi.createCity(payload);
