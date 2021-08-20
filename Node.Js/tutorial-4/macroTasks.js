@@ -7,7 +7,7 @@ const macroTasks = () => {
 
     const readFile = path.join(__dirname, 'readFile.txt');
     const writeFile = path.join(__dirname, 'writeFile.txt');
-    const writeCompressedFile = path.join(__dirname, 'writeCompressedFile.txt');
+    const writeCompressedFile = path.join(__dirname, 'writeCompressedFile.gzip');
 
     const readStream = fs.createReadStream(readFile, 'utf8');
     const writeStream = fs.createWriteStream(writeFile);
