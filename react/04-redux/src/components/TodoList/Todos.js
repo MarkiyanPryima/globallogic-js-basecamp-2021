@@ -3,15 +3,16 @@ import {connect} from 'react-redux';
 import {addTodos} from "../../Redux/todoReducer";
 import {nanoid} from '@reduxjs/toolkit';
 
-const mapStateToProps = state => {
-    return {
-        todos: state
-    };
-};
-
 const mapDispatchToProps = dispatch => {
     return {
         addTodo: el => dispatch(addTodos(el))
+    };
+};
+
+
+const mapStateToProps = state => {
+    return {
+        todos: state.todoList
     };
 };
 
