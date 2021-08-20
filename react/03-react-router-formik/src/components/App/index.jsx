@@ -5,7 +5,7 @@ import NotFound from '../Not found/notFound';
 import './app.css';
 import Cities from '../Cities';
 
-function App() {
+function TodoList() {
   return (
     <div className='App'>
       <div className={'bar'}>

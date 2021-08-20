@@ -1,0 +1,22 @@
+.Input {
+  .error {
+    color: red;
+  }
+}
+
+.Input:first-child {
+  margin-top: 142.5px;
+}
+
+.Input:nth-child(2), .Input:nth-child(3) {
+  margin-top: 15px;
+}
+
+input, select {
+  width: 150px;
+  font-size: large;
+}
+
+* {
+  text-align: center;
+}
