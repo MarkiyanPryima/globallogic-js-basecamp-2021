@@ -9,7 +9,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-
 const mapStateToProps = state => {
     return {
         todos: state.todoList
