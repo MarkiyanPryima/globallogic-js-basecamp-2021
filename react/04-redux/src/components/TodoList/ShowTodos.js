@@ -3,12 +3,6 @@ import TodoElement from './TodoElement';
 import {connect} from "react-redux";
 import './styles.css';
 
-const mapStateToProps = (state) => {
-    return {
-        todoList: state.todoList,
-    };
-};
-
 const mapDispatchToProps = dispatch => {
     return {
         addTodo: (el) => dispatch(addTodos(el)),
@@ -16,6 +10,12 @@ const mapDispatchToProps = dispatch => {
         completeTodo: (id) => dispatch(completeTodos(id)),
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        todoList: state.todoList,
+    };
+};
 
 const ShowTodos = props => {
     return (
