@@ -5,9 +5,8 @@ import './styles.css';
 
 const mapDispatchToProps = dispatch => {
     return {
-        addTodo: (el) => dispatch(addTodos(el)),
         deleteTodo: (id) => dispatch(deleteTodos(id)),
-        completeTodo: (id) => dispatch(completeTodos(id)),
+        completeTodo: (id) => dispatch(completeTodos(id))
     }
 }
 

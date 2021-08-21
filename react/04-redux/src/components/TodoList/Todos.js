@@ -17,28 +17,20 @@ const mapStateToProps = state => {
 
 const Todos = (props) => {
 
-    const [todo, setTodo] = useState('');
+    const [element, setElement] = useState('');
 
     const handleInput = (e) => {
-        setTodo(e.target.value);
+        setElement(e.target.value);
     }
 
     const addTodoElement = () => {
-        if (!todo) {
-            alert('Todo is empty');
-        } else {
-            props.addTodo({
-                id: nanoid(),
-                completed: false,
-                item: todo
-            });
-            setTodo('');
-        }
+        !element ? alert('Todo is empty') : props.addTodo({id: nanoid(), completed: false, item: element});
+        setElement('');
     };
 
     return (
         <div className='addTodos'>
-            <input type='text' placeholder='Todos' value={todo} onChange={e => handleInput(e)}/>
+            <input type='text' placeholder='Todos' value={element} onChange={e => handleInput(e)}/>
             <button id='add' onClick={() => addTodoElement()}>Add</button>
         </div>
     );
