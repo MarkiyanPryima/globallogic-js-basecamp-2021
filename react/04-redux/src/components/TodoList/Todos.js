@@ -19,8 +19,8 @@ const Todos = (props) => {
 
     const [element, setElement] = useState('');
 
-    const handleInput = (e) => {
-        setElement(e.target.value);
+    const handleInput = (event) => {
+        setElement(event.target.value);
     }
 
     const addTodoElement = () => {
@@ -30,7 +30,7 @@ const Todos = (props) => {
 
     return (
         <div className='addTodos'>
-            <input type='text' placeholder='Todos' value={element} onChange={e => handleInput(e)}/>
+            <input type='text' placeholder='Todos' value={element} onChange={event => handleInput(event)}/>
             <button id='add' onClick={() => addTodoElement()}>Add</button>
         </div>
     );
