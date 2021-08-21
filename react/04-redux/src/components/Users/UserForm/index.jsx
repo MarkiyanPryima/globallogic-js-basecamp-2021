@@ -1,72 +1,87 @@
-import { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import {useEffect} from 'react';
+import {useParams, useHistory} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import {getUser, deleteUser, editUser, createUser, fetchRoles, fetchUsers} from "../../../Redux/usersReducer";
 
-import userApi from '../../../api/userApi';
-import { MODE } from '../../../constants';
-import { ID } from '../constants';
+import {MODE} from '../../../constants';
+import {ID} from '../constants';
 import FormContainer from './FormContainer';
-import { getInitialValues, getRequestPayload } from './converter';
+import {getInitialValues, getRequestPayload} from './converter';
+import Loading from "../../Loading";
 
-function UserForm({ users, setUsers }) {
-  const { mode, id } = useParams();
-  const history = useHistory();
+function UserForm() {
 
-  const user = users.find(user => user.id === Number(id));
+    const {mode, id} = useParams();
+    const history = useHistory();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (mode === MODE.VIEW || mode === MODE.EDIT) {
-      if (!user) {
-        userApi
-          .getUser(Number(id))
-          .then(user => setUsers(prevUsers => [...prevUsers, user]))
-          .catch(err => window.alert(err.message));
-      }
-    }
-  }, [id, mode, user, setUsers]);
+    const currentUser = useSelector((state) => state.users.list).find((user) => user.id === Number(id));
+    const roles = useSelector((state) => state.users.roles);
+    const loading = useSelector((state) => state.users.fetchedUsers);
+    const rolesFetched = useSelector((state) => state.users.fetchedRoles);
 
-  const [roles, setRoles] = useState([]);
-  useEffect(() => {
-    userApi.getRoles().then(setRoles);
-  }, [setUsers]);
+    let className = loading ? 'hide' : 'show';
 
-  const handleSubmit = async values => {
-    try {
-      const payload = getRequestPayload(values);
+    useEffect(() => {
+        if (mode === MODE.VIEW || mode === MODE.EDIT) {
+            if (!currentUser) dispatch(getUser(id));
+        }
 
-      switch (mode) {
-        case MODE.CREATE:
-          await userApi.createUser(payload);
-          break;
-        case MODE.EDIT:
-          await userApi.editUser(payload);
-          break;
-        case MODE.CLONE:
-          await userApi.createUser(payload);
-          break;
-        case MODE.DELETE:
-          await userApi.deleteUser(payload);
-          break;
-        default:
-          console.error(`Failed to execute this request for ${mode} mode`);
-      }
-    } catch (err) {
-      window.alert(err.message);
-    }
+        if (!loading) dispatch(fetchUsers());
+    }, [dispatch, currentUser, mode, id, loading]);
 
-    history.push('/users');
-  };
+    useEffect(() => {
+        if (mode) {
+            if (!rolesFetched) {
+                dispatch(fetchRoles());
+            }
+        }
+    }, [mode, dispatch, rolesFetched]);
 
-  const initialValues = getInitialValues(user);
 
-  return (
-    <FormContainer
-      key={`${mode}:${initialValues[ID]}`}
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      mode={mode}
-      roles={roles}
-    />
-  );
+    const handleSubmit = async values => {
+        try {
+            const payload = getRequestPayload(values);
+
+            switch (mode) {
+                case MODE.CREATE:
+                    await dispatch(createUser(payload));
+                    break;
+                case MODE.EDIT:
+                    await dispatch(editUser(payload));
+                    break;
+                case MODE.CLONE:
+                    await dispatch(createUser(payload));
+                    break;
+                case MODE.DELETE:
+                    await dispatch(deleteUser(payload));
+                    break;
+                default:
+                    console.error(`Failed to execute this request for ${mode} mode`);
+            }
+        } catch (err) {
+            window.alert(err.message);
+        }
+
+        history.push('/users');
+    };
+
+    const initialValues = getInitialValues(currentUser);
+
+    return (
+        <>
+            <FormContainer
+                key={`${mode}:${initialValues[ID]}`}
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
+                mode={mode}
+                roles={roles}
+            />
+            <div className={className}>
+                <Loading/>
+            </div>
+        </>
+    );
 }
 
 export default UserForm;

@@ -1,4 +1,4 @@
-import {addTodos, deleteTodos, completeTodos} from "../../Redux/todoReducer";
+import {deleteTodos, completeTodos} from "../../Redux/todoReducer";
 import TodoElement from './TodoElement';
 import {connect} from "react-redux";
 import './styles.css';

@@ -24,7 +24,7 @@ const Todos = (props) => {
     }
 
     const addTodoElement = () => {
-        !element ? alert('Todo is empty') : props.addTodo({id: nanoid(), completed: false, item: element});
+        !element.trim() ? alert('Todo is empty') : props.addTodo({id: nanoid(), completed: false, item: element});
         setElement('');
     };
 

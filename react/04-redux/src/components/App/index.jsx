@@ -5,6 +5,7 @@ import NotFound from '../Not found/notFound';
 import Todos from "../TodoList/Todos";
 import DisplayTodos from "../TodoList/ShowTodos";
 import './app.css';
+import {useHistory} from "react-router-dom";
 
 function App() {
     return (
@@ -18,8 +19,8 @@ function App() {
             </div>
 
             <Switch>
-                <Redirect exact from='/' to='/users'/>
 
+                <Redirect exact from='/' to='/users' />
                 <Route path='/users'>
                     <Users/>
                 </Route>
