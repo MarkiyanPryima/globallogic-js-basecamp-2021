@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.animals {
+    height: 100vh;
+    background: darkolivegreen;
+    text-align: center;
+}
+
+.animals h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.animal {
+    max-width: 200px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.animal img {
+    width: 100%;
+    border: 10px solid white;
+    border-radius: 20px;
+}
+
+
